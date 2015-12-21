@@ -12,14 +12,14 @@ class RoxygenCommand(sublime_plugin.TextCommand):
         params_reg = self.view.find('(?<=\().*(?=\))', sel.begin())
         params_txt = self.view.substr(params_reg)
         params = params_txt.split(',')
+        params = [p.split("=")[0] for p in params]
+        params = [s.strip() for s in params]
 
         snippet = "#' Title\n#'\n#' <full description>\n"
 
         for p in params:
             snippet += "#' @param %s \n" % p
 
-        snippet += "#' @export\n#' @examples"
+        snippet += "#' @return\n#' \n#' @export\n#' \n#' @examples"
 
         self.view.insert(edit, sel.begin(), snippet)
-
-
