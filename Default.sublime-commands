@@ -2,5 +2,9 @@
 	{
 		"caption": "Roxygen",
 		"command": "roxygen"
-	}
+	},
+  {
+    "caption": "Rcomment",
+    "command": "rcomment"
+  }
 ]

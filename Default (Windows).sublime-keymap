@@ -1,6 +1,10 @@
 [
-{ 
-  "keys": ["ctrl+shift+alt+r"], 
-  "command": "roxygen"
-}
+  { 
+    "keys": ["ctrl+shift+alt+r"], 
+    "command": "roxygen"
+  },
+  {
+    "keys": ["ctrl+shift+alt+3"],
+    "command": "rcomment"
+  }
 ]
