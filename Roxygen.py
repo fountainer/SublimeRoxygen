@@ -14,6 +14,8 @@ class RoxygenCommand(sublime_plugin.TextCommand):
         params = params_txt.split(',')
         params = [p.split("=")[0] for p in params]
         params = [s.strip() for s in params]
+        length_max = max([len(str) for str in params])
+        params = [p + " " * (length_max - len(p)) for p in params]
 
         snippet = "#' Title\n#'\n#' <full description>\n"
 
@@ -32,7 +34,9 @@ class RcommentCommand(sublime_plugin.TextCommand):
         params = params_txt.split(',')
         params = [p.split("=")[0] for p in params]
         params = [s.strip() for s in params]
-        snippet = ""
+        length_max = max([len(str) for str in params])
+        params = [p + " " * (length_max - len(p)) for p in params]
+        snippet = "# \n"
         for p in params:
             snippet += "# @param %s \n" % p
 

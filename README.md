@@ -14,5 +14,6 @@ Only keep the function of generating Roxygen documentation templates.
 
 ### Done
 
+- Parameters alignment
 - Add ordinary comments
 - Delete the extra whitespaces when there are whitespaces before parameters.
