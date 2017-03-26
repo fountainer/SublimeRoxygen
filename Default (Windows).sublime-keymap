@@ -6,5 +6,9 @@
   {
     "keys": ["ctrl+shift+alt+3"],
     "command": "rcomment"
+  },
+  {
+    "keys": ["ctrl+shift+alt+c"],
+    "command": "rcpp"
   }
 ]

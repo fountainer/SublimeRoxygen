@@ -1,10 +1,14 @@
 [
-	{
-		"caption": "Roxygen",
-		"command": "roxygen"
-	},
+  {
+    "caption": "Roxygen",
+    "command": "roxygen"
+  },
   {
     "caption": "Rcomment",
     "command": "rcomment"
+  },
+  {
+    "caption": "Rcpp",
+    "command": "rcpp"
   }
 ]
