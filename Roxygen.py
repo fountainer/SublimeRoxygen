@@ -49,7 +49,7 @@ class RcppCommand(sublime_plugin.TextCommand):
         params_reg = self.view.find('(?<=\()(.|\n)*?(?=\))', sel.begin())
         params_txt = self.view.substr(params_reg)
         params = extract_param(params_txt)
-        params = [p.split()[1] for p in params]
+        params = [p.split()[-1].replace("&", "") for p in params]
         length_max = max([len(str) for str in params])
         params = [p + " " * (length_max - len(p)) for p in params]
         snippet = "//' Title\n//'\n"
