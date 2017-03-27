@@ -10,7 +10,6 @@ class RoxygenCommand(sublime_plugin.TextCommand):
         sel = self.view.sel()[0]
         params_reg = self.view.find('(?<=\()(.|\n)*?(?=\))', sel.begin())
         params_txt = self.view.substr(params_reg)
-        print(params_txt)
         params = extract_param(params_txt)
 
         snippet = "#' Title\n#'\n"
@@ -51,6 +50,8 @@ class RcppCommand(sublime_plugin.TextCommand):
         params_txt = self.view.substr(params_reg)
         params = extract_param(params_txt)
         params = [p.split()[1] for p in params]
+        length_max = max([len(str) for str in params])
+        params = [p + " " * (length_max - len(p)) for p in params]
         snippet = "//' Title\n//'\n"
 
         for p in params:
